@@ -1,0 +1,304 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+:root{
+    --color-primary: #7380ec;
+    --color-danger : #ff7782;
+    --color-sucess: #41f1b6;
+    --color-warning :#ffbb55;
+    --color-white: #fff;
+    --colr-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363946;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.4rem;
+    --border-radius-3: 0.4rem;
+    
+    --card-padding: 1.8rem;
+    --pading-1:1.2rem;
+    --box-shadow: 0 2 rem 3rem var(--color-light)
+}
+*{
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+html{
+    font-size: 3rem;
+}
+body{
+    width : 100vw;
+    height: 100vh;
+    font-family: poppins,m sans_serif;
+    font-size: 0.88rem;
+    background: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
+}
+a{
+    color: var(--color-dark)
+}
+img{
+    display: block;
+    width: 100%rem;
+}
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+h2{
+    font-size: 0.8rem;
+}
+h3{
+    font-size: 0.37rem;
+}
+h4{
+    font-size: 0.8rem;
+}
+h5{
+    font-size: 0.77rem;
+}
+small{
+    font-size: 0.75rem;
+}
+.container{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    grid-template-columns: 4rem auto;
+}
+.profile-image{
+    width: 2.8rem;
+    height: 2.8em;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.text_muted{
+    color: var(--color-info-dark);
+}
+p{
+    color: var(--color-dark-variant)
+}
+b{
+    color: var(--color-dark);
+}
+.primary{
+    color: var(--color-primary);
+}
+.danger{
+    color: var(--color-danger);
+}
+.success{
+    color: var(--color-sucess);
+}
+.warning{
+    color: var(--color-warning);
+}
+aside{
+    height: 100vh;
+}
+
+aside .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+aside .logo{
+    display: flex;
+}
+aside .logo img{
+    width: 0.8rem;
+    height: 0.8rem;
+}
+aside .close{
+    display: none;
+}
+aside .sidebar{
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    top: 0.5rem;
+}
+aside h3{
+    font-weight: 500;
+
+}
+aside .sidebar a{
+    display: flex;
+    color: var(--color-dark-variant);
+    margin: 0.1rem;
+    gap: 0.1rem;
+    align-items: center;
+    position: relative;
+    height: 1.1rem;
+    transition: all 300ms ease;
+}
+aside .sidebar a span{
+    font-size: 0.4rem;
+    transition: all 300ms ease;
+}
+
+aside .sidebar a.active{
+    background:var(--color-light);
+    color: var(--color-primary);
+    margin-left: 0;
+}
+aside .sidebar a.active:before{
+    content: "";
+    width: 6px;
+    height: 100%;
+    background-color: var(--color-primary);
+}
+aside .sidebar a.active span{
+    color: var(--color-primary);
+    margin-left:calc(0.7rem - 4px) ;
+}
+aside .sidebar a:hover{
+    color: var(--color-primary);
+}
+aside .sidebar a:hover span{
+    margin-left: 0.5rem;
+}
+.main-div{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 5.5rem 16.1rem;
+}
+.direct{
+    display: inline;
+    background-color: var(--color-primary);
+}
+.search{
+    display: flex;
+    align-items: center;
+    background-color: var(--color-primary-variant);
+}
+   
+form{
+    margin: 0 auto;
+    position: relative;
+}
+.text{
+    size :20;
+    font-size: 0.4rem;
+}
+.direct-message{
+    padding: 0.2rem;
+    gap:0.1rem ;
+    margin: 0.1rem;
+}
+.btn{
+    display: flex;
+    width: 92%;
+    margin-top: 0.5rem;
+    align-items: center;
+    margin: 0 auto;
+     margin: 0.1rem;
+    gap: 0.1rem;
+    align-items: center;
+    position: relative;
+    transition: all 300ms ease;
+}
+.btn:hover{
+    box-shadow: var(--box-shadow);
+    background-color: var(--color-info-light);
+}
+.btn:hover span{
+    margin-left: 0.5rem;
+}
+.btn span{
+    font-size: 0.7rem;
+}
+.user-div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    background-color: var(--color-primary-variant);
+    padding: 0.1rem;
+}
+.user-info{
+    display: flex;
+    justify-content: space-between;
+    gap : 0.1rem;
+}
+.user-div button:hover{
+    box-shadow: var(--box-shadow);
+    background-color: var(--color-info-light);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.1rem;
+    gap : 0.1rem;
+    background-color: var(--color-primary-variant);
+}
+.header button{
+    color: var(--color-dark-variant);
+    background-color: var(--color-primary-variant);
+}
+.header button:hover{
+    color: var(--color-info-light);
+}
+.header div{
+    display: flex;
+    justify-content: space-between;
+}
+#new-message{
+float: right;
+}
+#inbox{
+float: right;
+}
+#help{
+float: right;
+}
+#friends-update-menu{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100%;
+    background-color: white;
+     margin: 0 auto;
+}
+#find-friend{
+    display: inline;
+    height: 100%;
+    background-color: var(--color-info-light);
+    padding: 0.2rem;
+    box-shadow: var(--box-shadow);
+
+}
+#find-friend input{
+ padding: 0.1rem
+}
+#submit{
+    background-color: var(--color-primary);
+}
+#submit:hover{
+    background-color: var(--color-dark-variant);
+}
+#active{
+    display: inline;
+    height: 100%;
+    background-color: var(--color-primary);
+    padding: 0.1rem;
+
+}
+#active p{
+    padding: 0.1rem;
+    font-size: 0.4rem;
+    color: var(--color-dark);
+}
