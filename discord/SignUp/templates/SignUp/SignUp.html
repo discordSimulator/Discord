@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="{% static 'SignUp/styles/SignUp.css'%}">
+</head>
+<body>
+<!--Sign up container-->
+    <div class="container">
+    <!--form label-->
+        <h1 class="text">SIGN UP</h1>
+    <!--form fields-->
+        <div id="form_container">
+            <form method="post" autocomplete="on">
+                <div class="field-container">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="field">
+                        <label class="field-label text">
+                            {{ field.label }}{% for error in field.errors %} <div style="color: darkred">&nbsp;&nbsp;{{ error }}</div>{% endfor %}
+                        </label>
+                        {{ field }}
+                    </div>
+                    {% endfor %}
+                </div>
+        <!--Birthday date part-->
+                  <label class="date-container-label text">Date of birth:</label>
+                <div class="date-container">
+
+            <!--year selection-->
+                    <div class="date-option">
+                        <select class="birth-date-select" name="birth_year" required>
+                            <option value="" selected disabled hidden>Year</option>
+                            {% for year in year_seq %}
+                                <option value="{{ year }}">{{ year }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+            <!--month selection-->
+                    <div class="date-option">
+                        <select class="birth-date-select" name="birth_month" required>
+                            <option value="" selected disabled hidden>Month</option>
+                            {% for month in month_seq %}
+                                <option value="{{ month }}">{{ month }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+            <!--day selection-->
+                    <div class="date-option">
+                        <select class="birth-date-select" name="birth_day" required>
+                            <option value="" selected disabled hidden>Day</option>
+                            {% for day in day_seq %}
+                                <option value="{{ day }}">{{ day }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+<!--Submit button part-->
+                <input type="submit" value="Sign up">
+            </form>
+        </div>
+        <h4 id="have-account-text">Already have an account? <a href="/SignIn">Sign in</a></h4>
+        <h5 id="terms-and-conditions" style="color: #d9d9d9">By registering you agree to terms and conditions</h5>
+    </div>
+</body>
+<script>
+</script>
+</html>
