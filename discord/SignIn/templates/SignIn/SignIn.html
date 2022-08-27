@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign in</title>
+    <link rel="stylesheet" href="{% static 'SignIn/styles/SignIn.css' %}"></head>
+<body>
+<!--Sign up container-->
+    <div class="container">
+    <!--form label-->
+        <div class="form-label">
+            <h1 class="text">SIGN IN</h1>
+            <h3 style="color: darkred">{{ error }}</h3>
+        </div>
+    <!--form fields-->
+        <div id="form_container">
+            <form method="post" autocomplete="on">
+                <div class="field-container">
+                    {% csrf_token %}
+                    <div class="field">
+                        <label class="field-label text">Username Or Email:</label>
+                        <input class="field-input" type="text" name="username_or_email" placeholder="Username/Email" required>
+                    </div>
+                    <div class="field">
+                        <label class="field-label text">Password:</label>
+                        <input class="field-input" type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <input type="submit" value="Sign in">
+                    <h4 id="have-account-text">Not have an account? <a href="/SignUp">Sign up</a></h4>
+                </div>
+<!--Submit button part-->
+            </form>
+        </div>
+    </div>
+</body>
+</html>
